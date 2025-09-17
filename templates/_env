@@ -1,0 +1,32 @@
+NODE_ENV=development
+APP_URL=http://localhost:3000
+ASSET_URL=
+APP_LOCALE=en
+
+PORT=3000
+
+DB_HOST=127.0.0.1
+DB_USER=root
+DB_PASS=
+DB_NAME={{DB_NAME}}
+
+REDIS_HOST=127.0.0.1
+REDIS_PORT=6379
+REDIS_PASSWORD=
+
+QUEUE_ENABLED=true
+
+#--------------------------------------------------------------------------
+# Database Pooling
+#--------------------------------------------------------------------------
+DB_POOL_ENABLED=true
+DB_POOL_MIN=2
+DB_POOL_MAX=10
+
+#--------------------------------------------------------------------------
+# Logging Configuration
+#--------------------------------------------------------------------------
+# Supported channels: 'stack', 'single', 'daily', 'console'
+LOG_CHANNEL=daily
+# Supported levels: 'error', 'warn', 'info', 'http', 'verbose', 'debug', 'silly'
+LOG_LEVEL=debug

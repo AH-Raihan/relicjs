@@ -1,0 +1,8 @@
+# Exclude development files and local artifacts from the npm package.
+
+# Common
+.DS_Store
+*.log
+
+# Dependencies
+/node_modules

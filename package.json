@@ -1,0 +1,45 @@
+{
+  "name": "@relic.ahraihan/relicjs",
+  "version": "1.0.1",
+  "description": "RelicJS is a backend framework for Node.js that provides a Laravel-like structure and developer experience, designed for building robust and scalable applications with speed and elegance.",
+  "main": "bin/cli.js",
+  "bin": {
+    "create-relic-app": "bin/cli.js"
+  },
+  "files": [
+    "bin",
+    "templates"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AH-Raihan/relicjs.git"
+  },
+  "keywords": [
+    "relicjs",
+    "express",
+    "laravel",
+    "artisan",
+    "cli",
+    "mvc",
+    "orm",
+    "lucid",
+    "edgejs"
+  ],
+  "author": "A.H. Raihan",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "fs-extra": "^11.3.2",
+    "multer": "^2.0.2",
+    "node-cron": "^4.2.1",
+    "winston": "^3.17.0",
+    "winston-daily-rotate-file": "^5.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/AH-Raihan/relicjs/issues"
+  },
+  "homepage": "https://github.com/AH-Raihan/relicjs#readme"
+}

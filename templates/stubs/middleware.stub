@@ -1,0 +1,15 @@
+'use strict';
+
+const {{name}} = (req, res, next) => {
+    // Handle middleware logic here
+    console.log('Executing {{name}} middleware...');
+    
+    // For example, check for a condition
+    if (true) { // Replace with actual logic
+        next(); // Continue to the next middleware or route handler
+    } else {
+        res.status(403).send('Forbidden');
+    }
+};
+
+module.exports = {{name}};

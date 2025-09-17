@@ -1,0 +1,73 @@
+@layout('layouts.main')
+
+@section('body')
+    <h1>User Management</h1>
+
+    @!component('components.alert',{
+        type: 'info',
+        title: __('messages.greeting'),
+        content: 'This project now features an artisan-like CLI, route grouping, and view components.'
+    })
+
+    {{-- Display Validation Errors --}}
+    @if(errors && errors.length)
+        <div class="errors">
+            <strong>Whoops! Something went wrong.</strong>
+            <ul>
+                @each(error in errors)
+                    <li>{{ error.msg }}</li>
+                @endeach
+            </ul>
+        </div>
+    @endif
+
+    <h2>Add New User</h2>
+    <form action="/users" method="POST">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="{{ old.name || '' }}" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="{{ old.email || '' }}" required>
+        </div>
+        <button type="submit">Add User</button>
+    </form>
+
+    <hr>
+    <h2>Upload a File</h2>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="file">File:</label>
+            <input type="file" id="file" name="file" required>
+        </div>
+        <button type="submit">Upload</button>
+    </form>
+    <hr>
+
+    <h2>Existing Users</h2>
+    @if(users && users.length)
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Joined</th>
+                </tr>
+            </thead>
+            <tbody>
+                @each(user in users)
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.created_at_formatted }}</td>
+                    </tr>
+                @endeach
+            </tbody>
+        </table>
+    @else
+        <p>No users found. Add one above to get started!</p>
+    @endif
+@endsection

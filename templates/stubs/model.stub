@@ -1,0 +1,9 @@
+const { BaseModel } = require('@adonisjs/lucid');
+
+class {{modelName}} extends BaseModel {
+  static get table() {
+    return '{{tableName}}';
+  }
+}
+
+module.exports = {{modelName}};

@@ -1,0 +1,40 @@
+'use strict';
+
+class {{name}} {
+  /**
+   * Display a listing of the resource.
+   */
+  async index(req, res) {
+    //
+  }
+
+  /**
+   * Store a newly created resource in storage.
+   */
+  async store(req, res) {
+    //
+  }
+
+  /**
+   * Display the specified resource.
+   */
+  async show(req, res) {
+    //
+  }
+
+  /**
+   * Update the specified resource in storage.
+   */
+  async update(req, res) {
+    //
+  }
+
+  /**
+   * Remove the specified resource from storage.
+   */
+  async destroy(req, res) {
+    //
+  }
+}
+
+module.exports = new {{name}}();

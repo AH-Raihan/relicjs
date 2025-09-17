@@ -1,0 +1,32 @@
+const OxenQueue = require('oxen-queue');
+const config = require('../bootstrap/config');
+const Logger = require('../bootstrap/logger');
+
+/**
+ * This function defines the work to be done for each job.
+ * @param {object} job - The job object from the queue.
+ */
+const processJob = async (job) => {
+  const jobData = job.body;
+  Logger.info(`Processing job ${job.id} from queue '{{job_type}}'`, { data: jobData });
+
+  // Your job logic here...
+  // For example: await sendInvoice(jobData.invoiceId);
+
+  Logger.info(`Finished job ${job.id}`);
+  return { success: true };
+};
+
+// Create a new queue instance.
+// The job_type should be unique for this queue.
+const queue = new OxenQueue({
+  job_type: '{{job_type}}',
+  mysql_config: config.database.knex[config.app.env || 'development'].connection,
+});
+
+// Define the job processor
+queue.process({ work_fn: processJob });
+
+Logger.info(`Worker started for queue: {{job_type}}`);
+
+module.exports = queue;
