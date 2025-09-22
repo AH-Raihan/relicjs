@@ -33,7 +33,7 @@ RelicJS aims to make the development process a pleasing one without sacrificing 
 Install the CLI globally using npm:
 
 ```bash
-npm install -g relicjs
+npm install -g create-relic-app
 ```
 
 ## Quick Start
