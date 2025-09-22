@@ -1,5 +1,5 @@
 {
-  "name": "@relic.ahraihan/relicjs",
+  "name": "create-relic-app",
   "version": "1.0.1",
   "description": "RelicJS is a backend framework for Node.js that provides a Laravel-like structure and developer experience, designed for building robust and scalable applications with speed and elegance.",
   "main": "bin/cli.js",
